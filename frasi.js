@@ -5,7 +5,7 @@ window.FRASI = {
   2: "Parola di oggi: (NO) RIMORSO. Rimorso: Pancugolo. Si fa quel che si può. Se scegliamo con il senno del presente, allora forse non ha senso giudicarsi con il senno del poi. Indovina il cantante/gruppo. Indizio: ci sono in tanti universi paralleli",
   3: "",
   4: "",
-  5: "Parola di oggi: INNAMORARSI. In queste poche semplici righe c'è lo stupore di quando ti innamori e ti cambia la vita, senza che nessuno lo avesse minimamente previsto. Ci si innamora per caso, ma si resta per scelta. "Dimmi che rimane pure se non piovi più". Indovina il cantante/gruppo. Indizio: Have a ... Christmas",
+  5: "Parola di oggi: INNAMORARSI. In queste poche semplici righe c'è lo stupore di quando ti innamori e ti cambia la vita, senza che nessuno lo avesse minimamente previsto. Ci si innamora per caso, ma si resta per scelta. Dimmi che rimane pure se non piovi più. Indovina il cantante/gruppo. Indizio: Have a ... Christmas",
   6: "Parola di oggi: DIREZIONE. E' una canzone stupenda in un film stupendo. Ad un certo punto bisogna salpare dal porto, scegliere in che direzione andare. Anche se fa male. Anche se fa paura. Indovina il cantante/gruppo. Indizio: regione e sigaro. ",
   7: "",
   8: "",
