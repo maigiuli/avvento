@@ -2,7 +2,7 @@
 // Lascia "" se un giorno non deve avere frase.
 window.FRASI = {
   1: "",
-  2: "",
+  2: "Parola di oggi: (NO) RIMORSO. Rimorso: Pancugolo. Si fa quel che si può. Se scegliamo con il senno del presente, allora forse non ha senso giudicarsi con il senno del poi. Indovina il cantante/gruppo. Indizio: ci sono in tanti universi paralleli",
   3: "",
   4: "",
   5: "",
