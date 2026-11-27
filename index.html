@@ -26,12 +26,12 @@ h1{font-size:clamp(1.7rem,6vw,2.6rem);margin:.1em 0 .2em;color:var(--gold);text-
 .box small{font-size:.85rem;color:var(--gold)}
 .box:hover:not(.locked){transform:translateY(-2px)}
 .box.locked{opacity:.55;cursor:not-allowed;border-style:dashed}
-dialog{border:2px solid var(--gold);border-radius:16px;background:#215f47;color:var(--text);max-width:min(560px,94vw);width:100%;padding:18px;font-family:Georgia,serif}
+dialog{border:2px solid var(--gold);border-radius:16px;background:#215f47;color:var(--text);max-width:min(560px,94vw);width:100%;max-height:90vh;overflow-y:auto;padding:18px;font-family:Georgia,serif}
 dialog::backdrop{background:rgba(0,0,0,.6)}
 dialog h2{margin:0 0 10px;color:var(--gold)}
-dialog img{max-width:100%;border-radius:10px;display:block;margin:0 auto 12px}
+dialog img{max-width:100%;max-height:40vh;width:auto;height:auto;object-fit:contain;border-radius:10px;display:block;margin:0 auto 12px}
 dialog audio{width:100%;margin:8px 0}
-.phrase{font-size:1.15rem;line-height:1.5;font-style:italic;margin:10px 0}
+.phrase{white-space:pre-line;font-size:1.15rem;line-height:1.5;font-style:italic;margin:10px 0}
 .close{display:block;margin:14px 0 0 auto;background:var(--gold);color:#3a2705;border:0;border-radius:8px;padding:9px 16px;font:inherit;font-weight:bold;cursor:pointer}
 </style>
 </head>
@@ -117,13 +117,22 @@ dialog audio{width:100%;margin:8px 0}
     next();
   }
 
+  /* **testo** = grassetto; gli a capo nella frase vengono rispettati */
+  function fillPhrase(el, txt){
+    txt.split('**').forEach(function(part, i){
+      if (!part) return;
+      var n = document.createElement(i % 2 ? 'strong' : 'span');
+      n.textContent = part; el.appendChild(n);
+    });
+  }
+
   function openDay(n){
     dlg.textContent = '';
     var h = document.createElement('h2'); h.textContent = n + ' dicembre'; dlg.appendChild(h);
     var img = document.createElement('img'); img.alt = ''; dlg.appendChild(img);
     tryChain(img, 'img/' + pad(n), ['.jpg','.jpeg','.png','.webp']);
     var f = FRASI[n];
-    if (f){ var p = document.createElement('div'); p.className = 'phrase'; p.textContent = f; dlg.appendChild(p); }
+    if (f){ var p = document.createElement('div'); p.className = 'phrase'; fillPhrase(p, String(f)); dlg.appendChild(p); }
     var au = document.createElement('audio'); au.controls = true; au.preload = 'none'; dlg.appendChild(au);
     tryChain(au, 'audio/' + pad(n), ['.mp3','.m4a','.ogg','.wav']);
     var c = document.createElement('button'); c.className = 'close'; c.textContent = 'Chiudi';
